@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--写sql语句-->
+<mapper namespace="com.tl.demo.mapper.UserMapper">
+    <!--查询User全部数据-->
+    <select id="selectUserAll" resultType="User">
+        select * from sys_user
+    </select>
+    <!--新增User信息-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_user
+        (user_id,user_code,user_name,user_password,user_state)
+        values
+        (#{user_id},#{user_code},#{user_name},#{user_password},#{user_state})
+    </insert>
+</mapper>
